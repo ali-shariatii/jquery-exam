@@ -1,0 +1,45 @@
+body {
+    margin: 30px auto;
+    width: 90%;
+}
+
+h4 {
+    color: rgb(26, 119, 180);
+}
+
+div {
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin: 10px 0px 25px 0px;
+    padding: 10px;
+    height: 120px;
+    text-align: justify;
+}
+
+article {
+    display: none;
+    border: 1px solid rgb(223, 223, 223);
+    background-color: rgb(223, 223, 223);
+    border-radius: 7px;
+    padding: 4px;
+}
+
+#ans3 {
+    position: relative;
+}
+
+#btn13-hide, #btn9-rem {
+    margin-right: 4px;
+}
+
+.togClass1-1 {
+    background-color: grey;
+}
+
+.blue {
+    color: rgb(15, 126, 177);
+}
+
+.togClass11-2 {
+    color: rgb(15, 126, 177);
+}
