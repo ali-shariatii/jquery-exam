@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Final Exam</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <style>
+        body {
+            margin: 30px auto;
+            width: 90%;
+        }
+
+        h4 {
+            color: rgb(26, 119, 180);
+        }
+
+        div {
+            border: 1px solid grey;
+            border-radius: 10px;
+            margin: 10px 0px 25px 0px;
+            padding: 10px;
+            height: 120px;
+            text-align: justify;
+        }
+
+        article {
+            display: none;
+            border: 1px solid rgb(223, 223, 223);
+            background-color: rgb(223, 223, 223);
+            border-radius: 7px;
+            padding: 4px;
+        }
+
+        #ans3 {
+            position: relative;
+        }
+
+        #btn13-hide, #btn9-rem {
+            margin-right: 4px;
+        }
+
+        .togClass1-1 {
+            background-color: grey;
+        }
+
+        .blue {
+            color: rgb(15, 126, 177);
+        }
+
+        .togClass11-2 {
+            color: rgb(15, 126, 177);
+        }
+    </style>
+</head>
+<body>
+    <header>
+       <p>Student's Name | <strong>Ali Shariati</strong> <br>Course |  <b>Scripting Language II (LS2)</b><br> Exam Type | <b>Mid-term</b><br> What to Do | <b>Considering the questions you have been given in the PDF file, create an interactive and functional answer sheet using JQuery. Then make the sheet interactive as you write the answers.</b>  </p><br>
+    </header>
+    <h4>Question#1.1 | .slideToggle() & .toggleClass()</h4>
+    <p>Java and JavaScript are the same language?(True/False)</p>
+    <button class="btn btn-secondary" id="btn1-1">Answer</button>
+    <div id="container1">
+        <p id="ans1-1">False, Jquery is not even a programming language rather a cross-platform JS library.</p>
+    </div><hr>
+    
+    <script>
+        $(document).ready(function(){
+            $("#btn1-1").click(function(){
+                $("#ans1-1").slideToggle();
+                $("#container1").toggleClass("togClass1-1", "background-color", "grey")
+            });
+        });
+    </script>
+
+    <h4>Question#1.2 | .fadeOut() & .fadeIn()</h4>
+    <p>A programmer should never re-use existing code.(True/False)</p>
+    <button class="btn btn-secondary" id="btn1-2">Answer</button>
+    <div>
+        <p><span id="ans1-2">False</span>. Weird question!</p>
+    </div><hr>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn1-2").click(function(){
+                $("#ans1-2").fadeOut(500).fadeIn(2500);
+            });
+        });
+    </script>
+
+    <h4>Question#2 | .accordion()</h4>
+    <p>Briefly explain what is the purpose of JQuery?</p>
+    <div class="container2">
+        <header>Click Here!</header>
+        <article>The main purpose is "Do more by writing less!". It's a lightweight library that make JS usage mucj much easier and shorter. It usually wraps up the code in single code line into methods.</article>
+    </div><hr>
+
+    <script>
+        $(document).ready(function(){
+            $(".container2").on("click","header" , function() {
+            $(this).next().slideToggle();
+        });
+        });
+    </script>
+
+    <h4>Question#3 | .animate(position & size)</h4>
+    <p>What symbol is used to identify JQuery code?</p>
+    <button class="btn btn-secondary" id="btn3">Click</button>
+    <div>
+        <p id="ans3">$</p>
+    </div><hr>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn3").click(function(){
+                $("#ans3").animate({
+                    left: "50%",
+                    fontSize: "50px"
+                });
+            });
+        });
+    </script>
+
+    <h4>Question#4 | .animate(opacity & height)</h4>
+    <p>What is the following jQuery instruction used for?<br>
+    <pre>
+    $(document).ready(function(){
+        ... 
+    });</pre></p>
+    <button class="btn btn-secondary" id="btn4">Answer</button>
+    <div style="height: 10px;" id="container4">
+        <p style="opacity: 0%;" id="ans4">Scripts are read from top to buttom. this event acts like a signal. When reading a source code, it signals the code inside i is ready and can be execute it without being worry about the te parts tat are not created. In other words, <b> it makes the funciton availabe after the page is loaded.</b>  So with this event it no longer matters where to put the script,at the top or the bottom othe source code</p>
+    </div><hr>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn4").click(function(){
+                $("#ans4").animate({
+                    opacity: "100%"
+                });
+                $("#container4").animate({
+                    height: '170px'
+                })
+            });
+        });
+    </script>
+
+    <h4>Question#5 | .text() & .dblclick()</h4>
+    <p>What does the acronym DOM stand for?</p>
+    <button class="btn btn-secondary" id="btn5">Answer</button>
+    <div>
+        <p id="ans5"></p>
+    </div><hr>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn5").dblclick(function(){
+                $("#ans5").text("Document Object Model");
+            });
+        });
+    </script>
+
+    <h4>Question#6 | .mousedown()</h4>
+    <p>Briefly explain what actually is the DOM?</p>
+    <div id="container6">
+        <p id="ans6"></p>
+    </div><hr>
+
+    <script>
+        $(document).ready(function(){
+            $("#container6").mousedown(function(){
+                $("#ans6").text("It's an application programming interface <b> (API) </b>for XML/HTML Docs. It defines the way how document is manipulated, modifed or accessed.");
+            });
+        });
+    </script>
+
+    <h4>Question#7 | .mouseenter() & .append()</h4>
+    <p>What would the following jQuery instruction do?<br>
+    <pre>
+    $("#myElement");</pre></p>
+    <p></p><i>Hover on the text area once, to see more ...</i></p>
+    <div id="container7">
+        <p id="ans7">It selects the one html element that has the id of "myElement".</p>
+    </div><hr>
+
+    <script>
+        $(document).ready(function(){
+            $("#alert").fadeToggle();
+            $("#container7").mouseenter(function(){
+                $("#ans7").append(  "<br> If we want to select multiple HTML elements, we should go with giving them one class.");
+            });
+        });
+    </script>
+
+    <h4>Question#8 | .removeClass() & .mouseover()</h4>
+    <p>What would happen if you would click the button from the code below?<pre>
+    &lt;h1>Test 3&lt;/h1>
+    &lt;button id="test3">Click here</button>
+    &lt;script type="text/javascript">
+        $("#test3").click(function() {
+            $("h1").css("color", "red");
+    });</script></pre></p>
+    <div id="container8">
+        <p id="ans8" class="blue">It changes the Test 3 heading 1 color to red </p>
+    </div><hr>
+
+    <script>
+        $(document).ready(function(){
+            $("#container8").mouseover(function(){
+                $("#ans8").removeClass();
+            });
+        });
+    </script>
+
+    <h4>Question#9 | .addClass() & .removeClass()</h4>
+    <p>Which Paragraph will have the new text when you click the button?<pre>
+    &lt;button>Replace existing content</button>
+    &lt;p>This is paragraph #1&lt;/p>
+    &lt;p>This is paragraph #2&lt;/p>
+    &lt;script>
+        $("button").click(function(){
+            $("p");html("&lt;h1>Hello world!</h1>");
+        });
+    &lt;/script></pre></p>
+    <button class="btn btn-secondary" id="btn9-add">Add Answer Class</button>
+    <button class="btn btn-secondary" id="btn9-rem">Remove Answer Class</button>
+    <div>
+        <p id="ans9">Technically nothing! because there is a syntax error: after selecting p element, html method has been added with a semi-colon (;); whereas is should have been added with a dot (.).<b>But,</b> if we fix it, it will replace the two paragraphs with the "Hello World!" header h1 </p>
+    </div><hr>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn9-add").click(function(){
+                $("#ans9").addClass("blue");
+            });
+
+            $("#btn9-rem").click(function(){
+                $("#ans9").removeClass("blue");
+            });
+        });
+    </script>
+
+    <h4>Question#10 | .css() & .hover()</h4>
+    <p>Which of these are mouse events in JQuery?</p>
+    <ul>
+        <li>.dblclick()</li>
+        <li>.hover()</li>
+        <li>.mousedown()</li>
+        <li>.mouseenter()</li>
+        <li>.mousemove()</li>
+    </ul>
+    <div id="answer">
+        <p id="ans12">All of them!</p>
+    </div><hr>
+
+    <script>
+        $(document).ready(function(){
+            $("#ans12").hover(function(){
+                $(this).css("color", "rgb(15, 126, 177)");
+                }, function(){
+                $(this).css("color", "black");
+            });
+        });
+    </script>
+
+    <h4>Question#11.1 | Internal JSON data retrieving</h4>
+    <p>The AJAX request “load()” retrieves the entire content of the file. (True/False)</p>
+    <button class="btn btn-secondary" id="btn11-1">Answer</button>
+    <div >
+        <p id="ans11-1"></p>
+    </div><hr>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn11-1").click(function(){
+                let myJson = '{"answer":"True"}';
+                let myObject = JSON.parse(myJson);
+                $("#ans11-1").html(myObject.answer);
+            }); 
+        });  
+    </script>
+
+    <h4>Question#11.2 | .toggleClass()</h4>
+    <p>JSON is a human readable format for structuring data. (True/False)</p>
+    <button class="btn btn-secondary" id="btn11">Answer</button>
+    <div>
+    <p >False, it's <b id="toggle">machine</b> readable </p>
+    </div><hr>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn11").click(function(){
+                $("#toggle").toggleClass("togClass11-2", "color", "rgb(15, 126, 177)");
+            });
+        });
+    </script>
+
+    <h4>Question#12 | .animate({toggle})</h4>
+    <p>Which of the followings is the correct format for a Key/Value pair in JSON?</p>
+    <ol type="a">
+        <li>“car” ; “mazda”</li>
+        <li>“car” . ”mazda”</li>
+        <li>“car” : “mazda”</li>
+        <li>All of the above would work</li>
+        <li>None of the above</li>
+    </ol>
+    <button class="btn btn-secondary" id="btn12">Answer</button>
+    <div id="container12">
+        <p id="ans12">This one is a really weird question! As far as I know my keyboard only generates one form of double quotes in code editors: "key" : "value". So I guess the answer is (e) or (d)?!</p>
+    </div><hr>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn12").click(function(){
+                $("#ans12").animate({
+                    height: 'toggle'
+                });
+                $('#container12').animate({
+                    opacity: 'toggle'
+                });
+            });
+        });
+    </script>
+
+    <h4>Question#13 | .show() & .hide()</h4>
+    <p>Elements of JSON's objects can be:</p>
+    <ol type="a">
+        <li>strings</li>
+        <li>numbers</li>
+        <li>arrays</li>
+        <li>dates</li>
+        <li>all of the above</li>
+    </ol>
+    <button class="btn btn-secondary" id="btn13-hide">Hide Answer</button><button class="btn btn-secondary" id="btn13-show">Show Answer</button>
+    <div>
+        <p id="ans13">(e)</p>
+    </div><hr>
+
+    <script>
+        $(document).ready(function(){
+            $('#btn13-hide').click(function(){
+                $('#ans13').hide();
+            });
+
+            $('#btn13-show').click(function(){
+                $('#ans13').show();
+            });
+        });
+    </script>
+
+    <h4>Question#14 | .toggle()</span></h4>
+    <p>Explain in detail what the following code would do?<pre>
+    &lt;h1></h1>
+    &lt;script>
+        $.getJSON('http://www.server.com/myExam.json', function (data) {
+            $("h1").append("You are " + data.age + " years old.");
+        });
+    &lt;/script></pre></p>
+    <button class="btn btn-secondary" id="btn14">Answer</button>
+    <div>
+        <p id="ans14">If there is no time out or not found error, and the status is successful, the used method (geJASON) gets the age key value of the jason file which is in the above URL, and then displays it by appending it into the header 1 element followed by some text.</p>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            $('#btn14').click(function(){
+                $('#ans14').toggle();
+            });
+        });
+    </script>
+</body>
+</html>
